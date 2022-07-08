@@ -38,10 +38,7 @@ public class Loop_ex2 {
 					j+=2;
 				}
 			}
-		
-		}
-		
-		
+		}	
 	}
 
 }
