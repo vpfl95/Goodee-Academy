@@ -4,12 +4,18 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class StudentService {
+	
+	
+	Scanner sc;
+	public StudentService() {
+		sc = new Scanner(System.in);		
+	}
+	
 	//makeStudents
 	//학생수를 입력 받고,
 	//학생수만큼 정보를 입력 받고,
 	//학생들을 리턴
 	public Student[] makeStudents() {
-		Scanner sc = new Scanner(System.in);
 		System.out.println("학생 수 입력");
 		int n =sc.nextInt();
 		Student[] std = new Student[n];
@@ -22,8 +28,7 @@ public class StudentService {
 			student.kor = sc.nextInt();
 			student.eng = sc.nextInt();
 			student.math = sc.nextInt();
-			student.total = student.kor + student.eng + student.math;
-			student.avg = student.total /3;	
+			student.setTotal();
 			std[i] = student;
 		}
 		return std;
@@ -33,7 +38,6 @@ public class StudentService {
 	//같은 번호의 학생을 찾아서 그 학생 한명을 리턴
 	//없으면 null리턴
 	public Student findStudent(Student[] std) {
-		Scanner sc = new Scanner(System.in);
 		System.out.println("검색할 번호 입력");
 		int search_num = sc.nextInt();
 		for(int i=0; i<std.length; i++) {
@@ -43,4 +47,25 @@ public class StudentService {
 		}
 		return null;
 	}
+	
+	//addStudent
+	//학생들의 정보를 받아서 학생 한명 추가
+	//학생정보들을 리턴
+	public Student[] addStudent(Student[] std) {
+		Student student = new Student();
+		Student[] students = new Student[std.length+1];
+		System.out.println("이름, 번호, 국어, 영어, 수학 순서로 입력");
+		student.name = sc.next();
+		student.num = sc.nextInt();
+		student.kor = sc.nextInt();
+		student.eng = sc.nextInt();
+		student.math = sc.nextInt();
+		student.setTotal();
+		for(int i=0; i<std.length; i++) {
+			students[i] = std[i];
+		}
+		students[std.length] = student;
+		return students;
+	}
+	
 }

@@ -4,6 +4,15 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class StudentController {
+	Scanner sc;
+	StudentView sv;
+	StudentService ss;
+	Student[] std;
+	public StudentController() {
+		sc = new Scanner(System.in);
+		ss = new StudentService();
+		sv = new StudentView();
+	}
 	//start메서드 선언
 	//1.학생정보 입력 - 학생 수 입력 -이름,번호,국어,영어,수학 입력 총점,평균 계산
 	//2.학생정보 조회 - 모든 학생의 이름,번호,총점,평균 출력
@@ -12,9 +21,6 @@ public class StudentController {
 	//5.학생정보 추가 - 학생정보 한명 추가 
 	//6.프로그램 종료
 	public void start() {
-		Scanner sc = new Scanner(System.in);
-		StudentService ss = new StudentService();
-		StudentView sv = new StudentView();
 		Student[] std = null;
 		
 		while(true) {
@@ -55,7 +61,7 @@ public class StudentController {
 					System.out.println("4");
 					break;
 				case 5:
-					System.out.println("5");
+					std = ss.addStudent(std);
 					break;
 			}
 		}
