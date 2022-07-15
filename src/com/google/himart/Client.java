@@ -9,19 +9,9 @@ public class Client {
 		this.point = 10;
 	}
 	
-	public void buy(Tv tv) {
-		this.money -= tv.getPrice();
-		this.point += tv.getPoint();
-		System.out.println(this.money+","+this.point);
-	}
-	public void buy(Computer computer) {
-		this.money -= computer.getPrice();
-		this.point += computer.getPoint();
-		System.out.println(this.money+","+this.point);
-	}
-	public void buy(Phone phone) {
-		this.money -= phone.getPrice();
-		this.point += phone.getPoint();
+	public void buy(Product product) {
+		this.money -= product.getPrice();
+		this.point += product.getPoint();
 		System.out.println(this.money+","+this.point);
 	}
 

@@ -1,6 +1,6 @@
 package com.google.himart;
 
-public class Phone extends Himart {
+public class Phone extends Product {
 	private String company;
 	
 	public Phone() {

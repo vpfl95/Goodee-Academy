@@ -17,7 +17,7 @@ public class Main {
 		
 		
 		Client client = new Client();
-		client.buy(tv.getPrice(), tv.getPoint());
+		client.buy(tv);
 	}
 
 }

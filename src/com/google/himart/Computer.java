@@ -1,6 +1,6 @@
 package com.google.himart;
 
-public class Computer extends Himart {
+public class Computer extends Product {
 	private String cpu;
 	
 	public Computer() {

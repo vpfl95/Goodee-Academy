@@ -1,7 +1,6 @@
 package com.google.himart;
 
-public abstract class Himart {
-	
+public abstract class Product {
 	private String brand;
 	private int price;
 	private int point;
@@ -26,6 +25,4 @@ public abstract class Himart {
 	}
 	
 	public abstract void info();
-	
-	
 }

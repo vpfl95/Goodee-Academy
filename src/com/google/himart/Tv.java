@@ -1,6 +1,6 @@
 package com.google.himart;
 
-public class Tv extends Himart{
+public class Tv extends Product{
 	private int size;
 	
 	public Tv() {
