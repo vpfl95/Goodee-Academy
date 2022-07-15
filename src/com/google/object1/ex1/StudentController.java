@@ -58,7 +58,7 @@ public class StudentController {
 						sv.viewOne(student);
 					break;
 				case 4:
-					System.out.println("4");
+					std = ss.removeStudent(std);
 					break;
 				case 5:
 					std = ss.addStudent(std);
