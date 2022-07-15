@@ -1,16 +1,23 @@
 package com.google.main;
 
-import com.google.terran.Marine;
+import com.google.himart.Client;
+import com.google.himart.Computer;
+import com.google.himart.Phone;
+import com.google.himart.Tv;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Marine m1 = new Marine();
-		m1.setHp(30);
-		m1.move();
-		m1.info();
+		Computer computer = new Computer();
+		Tv tv = new Tv();
+		Phone phone = new Phone();
+		computer.info();
+		tv.info();
+		phone.info();
 		
 		
+		Client client = new Client();
+		client.buy(tv.getPrice(), tv.getPoint());
 	}
 
 }
