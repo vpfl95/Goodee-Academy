@@ -3,6 +3,8 @@ package com.google.ex1;
 public class Iu {
 	private String name;
 	private int age;
+	//fix-study
+	private String test;
 	
 	//싱글톤
 	private static Iu iu = new Iu();
