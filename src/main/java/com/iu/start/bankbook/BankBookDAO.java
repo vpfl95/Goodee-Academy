@@ -60,13 +60,16 @@ public class BankBookDAO implements BookDAO{
 	//BookNum의 값으로 조회
 	@Override
 	public BankBookDTO getDetail(BankBookDTO bankBookDTO) throws Exception {
-		Scanner sc = new Scanner(System.in);
 		Connection con = DBConnector.getConnection();
+		
 		String sql ="SELECT * FROM BankBook WHERE BOOKNUM = ?";
+		
 		PreparedStatement st = con.prepareStatement(sql);
-		if(bankBookDTO.getBooknum() == sc.nextInt())
-			st.setInt(1, bankBookDTO.getBooknum());
+		
+		st.setInt(1, bankBookDTO.getBooknum());
+		
 		ResultSet rs = st.executeQuery();
+		
 		BankBookDTO book = null;
 		if(rs.next()) {
 			book = new BankBookDTO();
