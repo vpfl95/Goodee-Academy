@@ -31,18 +31,20 @@ public class BankBookDAO implements BookDAO{
 	@Override
 	public ArrayList<BankBookDTO> getList() throws Exception {
 		Connection con =DBConnector.getConnection();
-		String sql = "SELECT * FROM BankBook ORDER BY BOOKNUM";
+		String sql = "SELECT * FROM BANKBOOK ORDER BY BOOKNUM";
 		PreparedStatement st = con.prepareStatement(sql);
 		ResultSet rs = st.executeQuery();
 		ArrayList<BankBookDTO> books = new ArrayList<BankBookDTO>();
+		
 		while(rs.next()) {
 			BankBookDTO book = new BankBookDTO();
-			book.setBooknum(rs.getInt("BOOKNUM"));
-			book.setBookname(rs.getString("BOOKNAME"));
-			book.setBookrate(rs.getDouble("BOOKRATE"));
-			book.setBooksale(rs.getInt("BOOKSALE"));
+			book.setBooknum(rs.getInt(1));
+			book.setBookname(rs.getString(2));
+			book.setBookrate(rs.getDouble(3));
+			book.setBooksale(rs.getInt(4));
 			books.add(book);
 		}
+		DBConnector.disConnect(st, con);
 		return books;
 	}
 	//어느 하나의 row의 Sale컬럼 수정

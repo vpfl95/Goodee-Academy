@@ -7,13 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Add Page</h1>
-	<form action="./add" method="post">
-		<h2>Book Name</h2>
-		<input type="text" name="bookname">
-		<h2>Book Rate</h2>
-		<input type="text" name="bookrate">
-		<button>등록</button>
+	<h1>Member Search</h1>
+	<form action="./search" method="post">
+	
+		ID입력 <input type="text" name="search">
+		<button type="submit">ID Search</button>
 	</form>
 </body>
 </html>
