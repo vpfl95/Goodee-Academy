@@ -22,8 +22,8 @@
 		<tbody>
 			<% for(BankBookDTO book:arr){%>
 				<tr>
-					<td><a href="./detail?booknum=<%=book.getBooknum()%>"><%= book.getBookname() %></a></td>
-					<td> <%= book.getBookrate() %></td>
+					<td><a href="./detail?bookNum=<%=book.getBookNum()%>"><%= book.getBookName() %></a></td>
+					<td> <%= book.getBookRate() %></td>
 				</tr>
 			<%} %>
 		</tbody>

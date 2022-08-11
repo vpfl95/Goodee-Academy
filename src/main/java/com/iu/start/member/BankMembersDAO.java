@@ -10,6 +10,30 @@ import javax.naming.spi.DirStateFactory.Result;
 import com.iu.start.util.DBConnector;
 
 public class BankMembersDAO implements MembersDAO {
+	
+	public BankMembersDTO getLogin(BankMembersDTO bankMembersDTO) throws Exception{
+		Connection con = DBConnector.getConnection();
+		
+		String sql = "SELECT ID, NAME FROM BANKMEMBERS WHERE ID=? AND PW=?";
+		
+		PreparedStatement st = con.prepareStatement(sql);
+		
+		st.setString(1, bankMembersDTO.getId());
+		st.setString(2, bankMembersDTO.getName());
+		
+		ResultSet rs = st.executeQuery();
+		if(rs.next()) {
+			bankMembersDTO = new BankMembersDTO();
+			bankMembersDTO.setId(rs.getString("ID"));
+			bankMembersDTO.setName(rs.getString("NAME"));
+		}else {
+			bankMembersDTO = null;
+		}
+		DBConnector.disConnect(st, con);
+		
+		return bankMembersDTO;
+	}
+	
 	@Override
 	public int setJoin(BankMembersDTO bankMembersDTO) throws Exception {
 		Connection con = DBConnector.getConnection();
@@ -35,7 +59,7 @@ public class BankMembersDAO implements MembersDAO {
 	@Override
 	public ArrayList<BankMembersDTO> getSearchByID(String search) throws Exception {
 		Connection con = DBConnector.getConnection();
-		String sql = "SELECT * FROM BankMembers WHERE ID LIKE ? ORDER BY DESC";
+		String sql = "SELECT * FROM BankMembers WHERE ID LIKE ? ORDER BY ID DESC";
 		PreparedStatement st = con.prepareStatement(sql);
 		st.setString(1, "%"+search+"%");
 		ResultSet rs = st.executeQuery();

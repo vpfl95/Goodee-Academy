@@ -12,11 +12,28 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+<c:if test="${member eq null}">
+	<div>
+		<a href="./member/login">Login</a>
+		<a href="./member/join">Join</a>
+	</div>
+</c:if>
 
-<a href="./member/login">Login</a>
-<a href="./member/join">Join</a>
-<a href="./member/search">Member Search</a><br>
-<a href="./bankbook/list">상품리스트</a>
-<a href="./bankbook/add">BankBook add</a>
+<c:if test="${not empty member}">
+	<div>
+		<a href="#">Logout</a>
+		<a href="#">MyPage</a>
+	</div>
+</c:if>
+
+<div>
+	<a href="./member/search">Member Search</a><br>
+</div>
+<div>
+	<a href="./bankbook/list">상품리스트</a>
+	<a href="./bankbook/add">BankBook add</a>
+</div>
+
+
 </body>
 </html>

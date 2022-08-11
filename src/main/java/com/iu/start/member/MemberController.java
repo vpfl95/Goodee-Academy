@@ -24,10 +24,14 @@ public class MemberController {
 		return "member/login";
 	}
 	@RequestMapping(value = "login", method = RequestMethod.POST)
-	public String login(BankMembersDTO bankMembersDTO) {
+	public String login(BankMembersDTO bankMembersDTO, Model model)throws Exception {
 		System.out.println("DB에로그인 실행");
+		BankMembersDAO bankMembersDAO = new BankMembersDAO();
+		bankMembersDTO = bankMembersDAO.getLogin(bankMembersDTO);
+		System.out.println(bankMembersDTO);
+		model.addAttribute("member",bankMembersDTO);
 		//"redirect:다시접속할URL주소(절대경로,상대경로)"
-		return "redirect:../";
+		return "home";
 	}
 	
 	// /member/join  value에 들어가는 경로는 무조건 절대경로
@@ -66,17 +70,9 @@ public class MemberController {
 	@RequestMapping(value = "search", method = RequestMethod.POST)
 	public String getSearchByID(String search, Model model) throws Exception{
 		System.out.println("search 실행 POST");
-//		BankMembersDAO bankMembersDAO = new BankMembersDAO();
-//		ArrayList<BankMembersDTO> arr = bankMembersDAO.getSearchByID(search);
-		ArrayList<BankMembersDTO> arr =new ArrayList<BankMembersDTO>();
-		for(int i=0;i<10;i++) {
-			BankMembersDTO member = new BankMembersDTO();
-			member.setId("id"+i);
-			member.setName("name"+i);
-			member.setEmail("email"+i);
-			member.setPhone(i+"");
-			arr.add(member);
-		}
+		BankMembersDAO bankMembersDAO = new BankMembersDAO();
+		ArrayList<BankMembersDTO> arr = bankMembersDAO.getSearchByID(search);
+
 		model.addAttribute("list", arr);
 		return "member/list";
 	}

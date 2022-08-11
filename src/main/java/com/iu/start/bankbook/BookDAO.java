@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import com.iu.start.member.BankMembersDTO;
 
 public interface BookDAO {
+	
+	public int setDelete(BankBookDTO bankBookDTO) throws Exception;
+	
+	public int setUpdate(BankBookDTO bankBookDTO) throws Exception;
+	
 	//BankBook 테이블에 insert
 	//BookNum: 현재 시간을 밀리세컨즈로 변환해서 입력
 	//BookSale: 1로 입력
@@ -18,4 +23,5 @@ public interface BookDAO {
 	
 	//BookNum의 값으로 조회
 	public BankBookDTO getDetail(BankBookDTO bankBookDTO) throws Exception;
+	
 }
