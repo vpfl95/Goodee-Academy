@@ -105,7 +105,7 @@ public class BankBookDAO implements BookDAO{
 		
 		PreparedStatement st = con.prepareStatement(sql);
 		
-		st.setInt(1, bankBookDTO.getBookNum());
+		st.setLong(1, bankBookDTO.getBookNum());
 		
 		ResultSet rs = st.executeQuery();
 		

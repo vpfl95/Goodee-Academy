@@ -1,6 +1,7 @@
 <%@page import="com.iu.start.bankbook.BankBookDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%--<%
 	//요청이 발생하면 생성, 응답이 나가면 소멸: RequestScope
 	BankBookDTO  bankBookDTO = (BankBookDTO)request.getAttribute("dto");
@@ -32,14 +33,19 @@
 
 	
 	<!-- 상대경로 -->
-	<a href="../member/login">Login</a>
+	<a href="../member/login.iu">Login</a>
 	<!-- 절대경로 -->
-	<a href="/member/join">Join</a>
+	<a href="/member/join.iu">Join</a>
 	
 	<a href="./list">리스트보기</a>
 	
-	<a href="./update?bookNum=${dto.bookNum}">업데이트</a>
+	<a href="./update.iu?bookNum=${dto.bookNum}">수정</a>
 	
-	<a href="./delete?bookNum=${dto.bookNum}">삭제</a>
+	<a href="./delete.iu?bookNum=${dto.bookNum}">삭제</a>\
+	
+	<c:if test="${not empty sessionScope.member}">
+		<a href="../bankAccount/add.iu?bookNum=${dto.bookNum}">가입하기</a>
+	</c:if>
+	
 </body>
 </html>

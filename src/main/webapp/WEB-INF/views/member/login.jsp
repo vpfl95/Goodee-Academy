@@ -9,14 +9,14 @@
 <body>
 	<h1>Login Page</h1>
 	<div>
-        <form action="./login" method="post">
+        <form action="./login.iu" method="post">
             <div class="container">
                 <h2>ID 로그인</h2>
                 <div>
-                    <input type="text" name="id" placeholder="아이디">
+                    <input type="text" value="id5" name="id" placeholder="아이디">
                 </div>
                 <div>
-                    <input type="password" name="pw" placeholder="비밀번호">
+                    <input type="password" value="id5" name="pw" placeholder="비밀번호">
                 </div>
                 
                 <div class="login">                

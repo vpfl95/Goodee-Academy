@@ -3,6 +3,7 @@ package com.iu.start.bankbook;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.el.ELParseException;
 
 import org.springframework.stereotype.Controller;
@@ -27,7 +28,7 @@ public class BankBookController {
 //	}
 	// /bankbook/add POST
 	// name, rate
-	@RequestMapping(value = "add", method = RequestMethod.POST)
+	@RequestMapping(value = "add.iu", method = RequestMethod.POST)
 	public ModelAndView add(BankBookDTO book) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		System.out.println(book.getBookName());
@@ -35,19 +36,19 @@ public class BankBookController {
 		BankBookDAO bankBookDAO = new BankBookDAO();
 		int result = bankBookDAO.setBankBook(book);
 		//상품등록 후 리스트페이지로 이동
-		mv.setViewName("redirect:./list");
+		mv.setViewName("redirect:./list.iu");
 		return mv;
 	}
 	
 	
 	// /bankbook/add GET /WEB-INF/views/bankbook/add/jsp
-	@RequestMapping(value = "add" )
+	@RequestMapping(value = "add.iu" )
 	public void add()throws Exception{
 		System.out.println("add 실행");
 		//return "bankbook/add";
 	}
 	
-	@RequestMapping(value = "list", method = RequestMethod.GET)
+	@RequestMapping(value = "list.iu", method = RequestMethod.GET)
 	public String list(Model model) throws Exception {
 		//ModelAndView mv = new ModelAndView();
 		
@@ -60,8 +61,8 @@ public class BankBookController {
 		return "/bankbook/list";
 	}
 	
-	@RequestMapping(value = "detail", method = RequestMethod.GET)
-	public ModelAndView detail(BankBookDTO bankBookDTO) throws Exception {
+	@RequestMapping(value = "detail.iu", method = RequestMethod.GET)
+	public ModelAndView detail(HttpSession session, BankBookDTO bankBookDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		System.out.println("BankBook Detail 실행");
 
@@ -75,7 +76,7 @@ public class BankBookController {
 		//return "/bankbook/detail";		//jsp 리턴
 	}
 	
-	@RequestMapping(value = "update", method = RequestMethod.POST)
+	@RequestMapping(value = "update.iu", method = RequestMethod.POST)
 	public String update(BankBookDTO bankBookDTO) throws Exception{
 		System.out.println("bankbook POST 업데이트 실행");
 		BankBookDAO bankBookDAO = new BankBookDAO();
@@ -83,9 +84,9 @@ public class BankBookController {
 		System.out.println(bankBookDTO.getBookSale());
 		if(result==1) System.out.println("업데이트 성공");
 		else System.out.println("업데이트 실패");
-		return "redirect:./detail?bookNum="+bankBookDTO.getBookNum();
+		return "redirect:./detail.iu?bookNum="+bankBookDTO.getBookNum();
 	}
-	@RequestMapping(value = "update", method = RequestMethod.GET)
+	@RequestMapping(value = "update.iu", method = RequestMethod.GET)
 	public void update(BankBookDTO bankBookDTO, Model model) throws Exception{
 		System.out.println("bankbook GET 업데이트 실행");
 		BankBookDAO bankBookDAO = new BankBookDAO();
@@ -94,13 +95,13 @@ public class BankBookController {
 		model.addAttribute("dto", bankBookDTO);
 	}
 	
-	@RequestMapping(value = "delete", method = RequestMethod.GET)
+	@RequestMapping(value = "delete.iu", method = RequestMethod.GET)
 	public ModelAndView delete(BankBookDTO bankBookDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		System.out.println("bankbook delete 실행");
 		BankBookDAO bankBookDAO = new BankBookDAO();
 		int result = bankBookDAO.setDelete(bankBookDTO);
-		mv.setViewName("redirect:./list");
+		mv.setViewName("redirect:./list.iu");
 		return mv;
 	}
 	

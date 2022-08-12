@@ -22,13 +22,13 @@
 		<tbody>
 			<% for(BankBookDTO book:arr){%>
 				<tr>
-					<td><a href="./detail?bookNum=<%=book.getBookNum()%>"><%= book.getBookName() %></a></td>
+					<td><a href="./detail.iu?bookNum=<%=book.getBookNum()%>"><%= book.getBookName() %></a></td>
 					<td> <%= book.getBookRate() %></td>
 				</tr>
 			<%} %>
 		</tbody>
 		
 	</table>
-	<a href="./add">상품등록</a>
+	<a href="./add.iu">상품등록</a>
 </body>
 </html>

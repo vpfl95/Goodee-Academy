@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>Add Page</h1>
-	<form action="./add" method="post">
+	<form action="./add.iu" method="post">
 		<h2>Book Name</h2>
 		<input type="text" name="bookName">
 		<h2>Book Rate</h2>

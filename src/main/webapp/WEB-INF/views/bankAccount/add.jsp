@@ -7,11 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Member Search</h1>
-	<form action="./search.iu" method="post">
-	
-		ID입력 <input type="text" name="search">
-		<button type="submit">ID Search</button>
-	</form>
+	<h1>Bank Account add</h1>
 </body>
 </html>

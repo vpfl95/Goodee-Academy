@@ -19,7 +19,7 @@ public class BankMembersDAO implements MembersDAO {
 		PreparedStatement st = con.prepareStatement(sql);
 		
 		st.setString(1, bankMembersDTO.getId());
-		st.setString(2, bankMembersDTO.getName());
+		st.setString(2, bankMembersDTO.getPw());
 		
 		ResultSet rs = st.executeQuery();
 		if(rs.next()) {

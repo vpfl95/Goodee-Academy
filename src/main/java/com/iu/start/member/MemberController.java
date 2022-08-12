@@ -3,6 +3,7 @@ package com.iu.start.member;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.swing.text.html.FormSubmitEvent.MethodType;
 
 import org.springframework.stereotype.Controller;
@@ -17,32 +18,40 @@ public class MemberController {
 	// annotation
 	// @ : 설명+실행
 	
+	@RequestMapping(value = "logout.iu", method = RequestMethod.GET)
+	public String logout(HttpSession session)throws Exception {
+		session.invalidate();
+		return "redirect:../";
+	}
+	
 	// /member/login
-	@RequestMapping(value = "login", method = RequestMethod.GET)
+	@RequestMapping(value = "login.iu", method = RequestMethod.GET)
 	public String login() {
 		System.out.println("로그인 실행");
 		return "member/login";
 	}
-	@RequestMapping(value = "login", method = RequestMethod.POST)
-	public String login(BankMembersDTO bankMembersDTO, Model model)throws Exception {
+	@RequestMapping(value = "login.iu", method = RequestMethod.POST)
+	public String login(HttpSession session, BankMembersDTO bankMembersDTO, Model model)throws Exception {
 		System.out.println("DB에로그인 실행");
 		BankMembersDAO bankMembersDAO = new BankMembersDAO();
 		bankMembersDTO = bankMembersDAO.getLogin(bankMembersDTO);
 		System.out.println(bankMembersDTO);
+		//HttpSession session = request.getSession();
+		session.setAttribute("member", bankMembersDTO);
 		model.addAttribute("member",bankMembersDTO);
 		//"redirect:다시접속할URL주소(절대경로,상대경로)"
-		return "home";
+		return "redirect:../";
 	}
 	
 	// /member/join  value에 들어가는 경로는 무조건 절대경로
-	@RequestMapping(value = "join", method = RequestMethod.GET)
+	@RequestMapping(value = "join.iu", method = RequestMethod.GET)
 	public String join() {
 		System.out.println("Join GET 실행");
 		return "member/join";
 	}
 	
 	//POST
-	@RequestMapping(value = "join", method = RequestMethod.POST)
+	@RequestMapping(value = "join.iu", method = RequestMethod.POST)
 	public String join(BankMembersDTO member) throws Exception {
 		System.out.println("Join POST 실행");
 		
@@ -60,14 +69,14 @@ public class MemberController {
 			System.out.println("가입 실패");
 		//로그인폼 페이지로 이동
 		//redirect
-		return "redirect:./login";
+		return "redirect:./login.iu";
 	}
 	
-	@RequestMapping(value = "search", method = RequestMethod.GET)
+	@RequestMapping(value = "search.iu", method = RequestMethod.GET)
 	public void getSearchByID() throws Exception{
 		System.out.println("search 실행 GET");
 	}
-	@RequestMapping(value = "search", method = RequestMethod.POST)
+	@RequestMapping(value = "search.iu", method = RequestMethod.POST)
 	public String getSearchByID(String search, Model model) throws Exception{
 		System.out.println("search 실행 POST");
 		BankMembersDAO bankMembersDAO = new BankMembersDAO();
