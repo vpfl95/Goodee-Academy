@@ -7,8 +7,11 @@ import java.util.ArrayList;
 
 import javax.naming.spi.DirStateFactory.Result;
 
+import org.springframework.stereotype.Repository;
+
 import com.iu.start.util.DBConnector;
 
+@Repository("MyDAO")
 public class BankMembersDAO implements MembersDAO {
 	
 	public BankMembersDTO getLogin(BankMembersDTO bankMembersDTO) throws Exception{
