@@ -37,7 +37,7 @@
 	<!-- 절대경로 -->
 	<a href="/member/join.iu">Join</a>
 	
-	<a href="./list">리스트보기</a>
+	<a href="./list.iu">리스트보기</a>
 	
 	<a href="./update.iu?bookNum=${dto.bookNum}">수정</a>
 	

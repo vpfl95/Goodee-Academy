@@ -7,8 +7,11 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
 
+import org.springframework.stereotype.Repository;
+
 import com.iu.start.util.DBConnector;
 
+@Repository
 public class BankBookDAO implements BookDAO{
 	
 	@Override
