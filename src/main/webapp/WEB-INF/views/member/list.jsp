@@ -18,10 +18,10 @@
 		</tr>
 		<c:forEach items="${requestScope.list}" var="dto">
 			<tr>
-				<td>${dto.userName}</td>
-				<td>${dto.name}</td>
-				<td>${dto.email}</td>
-				<td>${dto.phone}</td>
+				<td>${pageScope.dto.userName}</td>
+				<td>${pageScope.dto.name}</td>
+				<td>${pageScope.dto.email}</td>
+				<td>${pageScope.dto.phone}</td>
 			</tr>
 		</c:forEach>
 		

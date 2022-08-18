@@ -8,9 +8,9 @@
 </head>
 <body>
 	<h1>Member Search</h1>
-	<form action="search" method="post">
+	<form action="./search" method="post">
 		아이디 : <input type="text" name="search">
-		<button>search</button>
+		<button type="submit">search</button>
 	</form>
 </body>
 </html>

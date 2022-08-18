@@ -20,12 +20,16 @@ public class BankbookMembersDAOTest extends MyAbstractTest {
 	public void getSearchByID() {
 		try {
 			List<BankMembersDTO> arr =  bankMembersDAO.getSearchByID("id");
-			assertNotNull(arr);
+			assertEquals(0, arr.size());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+	}
+	
+	@Test
+	public void getLogin() {
+		BankMembersDTO member = bankMembersDAO.getLogin();
 	}
 	
 }

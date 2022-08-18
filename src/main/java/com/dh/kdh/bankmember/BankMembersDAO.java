@@ -16,4 +16,13 @@ public class BankMembersDAO {
 	public List<BankMembersDTO> getSearchByID(String search)throws Exception{
 		return sqlSession.selectList(NAMESPACE + "getSearchByID", search);
 	}
+	
+	public BankMembersDTO getLogin(BankMembersDTO bankMembersDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"getLogin",bankMembersDTO);
+	}
+	
+	public int setJoin(BankMembersDTO bankMembersDTO)throws Exception{
+		return sqlSession.insert(NAMESPACE+"setjoin",bankMembersDTO);
+	}
+	
 }
