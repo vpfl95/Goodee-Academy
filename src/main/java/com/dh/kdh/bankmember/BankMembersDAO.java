@@ -22,7 +22,7 @@ public class BankMembersDAO {
 	}
 	
 	public int setJoin(BankMembersDTO bankMembersDTO)throws Exception{
-		return sqlSession.insert(NAMESPACE+"setjoin",bankMembersDTO);
+		return sqlSession.insert(NAMESPACE+"setJoin",bankMembersDTO);
 	}
 	
 }
