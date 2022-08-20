@@ -10,7 +10,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 	                <div class="navbar-nav">
-	                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+	                    <a class="nav-link active" aria-current="page" href="/">Home</a>
 	                    <a class="nav-link" href="/bankbook/list">상품리스트</a>
 	                    <a class="nav-link" href="#">공지사항</a>
 	                    <a class="nav-link" href="/member/search">멤버서치</a>

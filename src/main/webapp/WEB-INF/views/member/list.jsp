@@ -10,7 +10,6 @@
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
-	
 	<table class="table table-dark table-striped">
  		<tr>
 			<td>UserName</td>

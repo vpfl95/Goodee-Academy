@@ -2,8 +2,9 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-		    
+<!-- namespace의 값은 사용할 DAO의 풀패키지명 -->		    
 <mapper namespace="com.dh.kdh.bankmember.BankMembersDAO">
+<!-- id는 DAO의 메서드명과 동일하게  parameterType 쿼리를 어떤 데이터 타입에서 꺼낼건지 , resultType 조회결과를 어느 데이터 타입에 담을지-->
 	<select id="getSearchByID" parameterType="String" resultType="BankMembersDTO">
 		SELECT * FROM BANKMEMBERS WHERE USERNAME LIKE '%'||#{search}||'%' ORDER BY USERNAME DESC
 	</select>

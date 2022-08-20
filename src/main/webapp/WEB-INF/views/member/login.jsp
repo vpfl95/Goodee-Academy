@@ -15,7 +15,7 @@
 	  <form action="./login" method="post">
 	    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 	
-	    <div class="form-floating">
+	    <div class="form-floating" style="">
 	      <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="userName">
 	      <label for="floatingInput">ID</label>
 	    </div>
@@ -29,7 +29,7 @@
 	        <input type="checkbox" value="remember-me"> Remember me
 	      </label>
 	    </div>
-	    <button class="w-30 btn btn-lg btn-primary" type="submit">Sign in</button>
+	    <button class="w-30 btn btn-lg btn-dark" type="submit">Sign in</button>
 	    <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
 	  </form>
 	</main>
