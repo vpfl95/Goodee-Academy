@@ -11,19 +11,12 @@
 <body>
 	<c:import url="../template/header.jsp"></c:import>
 	
-	<table class="table table-dark table-striped">
-		<tr>
-			<td>Book Name</td>
-			<td>Book Rate</td>
-		</tr>
-		<c:forEach items="${list}" var="dto">
-			<tr>	
-				<td><a href="./detail?bookNum=${dto.bookNum}">${dto.bookName}</a></td>
-				<td>${dto.bookRate}</td>
-			</tr>
-		</c:forEach>
-	</table>
-	<button class="btn btn-sm btn-dark" onclick="location.href='./add'">상품 추가</button >
+	<form action="./update" method="post">
+		<input type="hidden" name="bookNum" readonly="readonly" value="${dto.bookNum}">
+		BookName<input type="text" name="bookName" value="${dto.bookName}">
+		BookRate<input type="text" name="bookRate" value="${dto.bookRate}">
+		<button>수정</button> 
+	</form>
 	
 	<c:import url="../template/footer.jsp"></c:import>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
