@@ -29,7 +29,9 @@
 	</table>
 	<button class="btn btn-sm btn-dark" onclick="location.href='./update?bookNum=${dto.bookNum}'">수정</button >
 	<button class="btn btn-sm btn-dark" onclick="location.href='./delete?bookNum=${dto.bookNum}'">삭제</button >
-
+	<c:if test="${not empty sessionScope.member}">
+		<a href="../bankaccount/add?bookNum=${dto.bookNum}">가입하기</a>
+	</c:if>
 	<c:import url="../template/footer.jsp"></c:import>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>

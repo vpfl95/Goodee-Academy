@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.dh.kdh.bankaccount.BankAccountDTO;
+
 @Repository
 public class BankMembersDAO {
 	
@@ -23,6 +25,10 @@ public class BankMembersDAO {
 	
 	public int setJoin(BankMembersDTO bankMembersDTO)throws Exception{
 		return sqlSession.insert(NAMESPACE+"setJoin",bankMembersDTO);
+	}
+	
+	public BankMembersDTO getMyPage(BankMembersDTO bankMembersDTO)throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"getMyPage", bankMembersDTO);
 	}
 	
 }

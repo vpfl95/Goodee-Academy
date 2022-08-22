@@ -28,8 +28,17 @@ public class BankbookMembersDAOTest extends MyAbstractTest {
 	}
 	
 	@Test
+	public void getMyPage()throws Exception{
+		BankMembersDTO bankMembersDTO = new BankMembersDTO();
+		bankMembersDTO.setName("id5");
+		bankMembersDTO = bankMembersDAO.getMyPage(bankMembersDTO);
+		System.out.println(bankMembersDTO.getEmail());
+		assertNotNull(bankMembersDTO);
+	}
+	
+	@Test
 	public void getLogin() {
-		BankMembersDTO member = bankMembersDAO.getLogin();
+//		BankMembersDTO member = bankMembersDAO.getLogin();
 	}
 	
 }

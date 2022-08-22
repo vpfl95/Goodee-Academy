@@ -2,12 +2,21 @@ package com.dh.kdh.bankaccount;
 
 import java.sql.Date;
 
+import com.dh.kdh.bankbook.BankBookDTO;
+
 public class BankAccountDTO {
 	private Long accountNum;
 	private String userName;
 	private Long bookNum;
-	private Date date;
+	private Date accountDate;
+	private BankBookDTO bankBookDTO;
 	
+	public BankBookDTO getBankBookDTO() {
+		return bankBookDTO;
+	}
+	public void setBankBookDTO(BankBookDTO bankBookDTO) {
+		this.bankBookDTO = bankBookDTO;
+	}
 	public Long getAccountNum() {
 		return accountNum;
 	}
@@ -26,10 +35,11 @@ public class BankAccountDTO {
 	public void setBookNum(Long bookNum) {
 		this.bookNum = bookNum;
 	}
-	public Date getDate() {
-		return date;
+	public Date getAccountDate() {
+		return accountDate;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setAccountDate(Date accountDate) {
+		this.accountDate = accountDate;
 	}
+
 }

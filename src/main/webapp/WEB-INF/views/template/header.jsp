@@ -20,8 +20,8 @@
 			                    <a class="nav-link" href="/member/join">회원가입</a>
 	                    	</c:when>
 	                    	<c:otherwise>
-		                    	<a class="nav-link" href="./member/logout">Logout</a>
-								<a class="nav-link" href="#">MyPage</a>
+		                    	<a class="nav-link" href="/member/logout">Logout</a>
+								<a class="nav-link" href="/member/myPage">MyPage</a>
 	                    	</c:otherwise>
 	                    </c:choose>  
 	                </div>

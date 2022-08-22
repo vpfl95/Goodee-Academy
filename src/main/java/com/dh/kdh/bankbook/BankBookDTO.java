@@ -1,6 +1,9 @@
 package com.dh.kdh.bankbook;
 
 import java.sql.Clob;
+import java.util.List;
+
+import com.dh.kdh.bankaccount.BankAccountDTO;
 
 
 public class BankBookDTO {
@@ -9,7 +12,14 @@ public class BankBookDTO {
 	private double bookRate;
 	private int bookSale;
 	private String bookContents;
+	private List<BankAccountDTO> bankAccountDTOs;
 	
+	public List<BankAccountDTO> getBankAccountDTOs() {
+		return bankAccountDTOs;
+	}
+	public void setBankAccountDTOs(List<BankAccountDTO> bankAccountDTOs) {
+		this.bankAccountDTOs = bankAccountDTOs;
+	}
 	public long getBookNum() {
 		return bookNum;
 	}
