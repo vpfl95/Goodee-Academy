@@ -12,7 +12,8 @@
 	                <div class="navbar-nav">
 	                    <a class="nav-link active" aria-current="page" href="/">Home</a>
 	                    <a class="nav-link" href="/bankbook/list">상품리스트</a>
-	                    <a class="nav-link" href="#">공지사항</a>
+	                    <a class="nav-link" href="/notice/list">공지사항</a>
+	                    <a class="nav-link" href="/qna/list">QnA</a>
 	                    <a class="nav-link" href="/member/search">멤버서치</a>
 	                    <c:choose>
 	                    	<c:when test="${empty member}">

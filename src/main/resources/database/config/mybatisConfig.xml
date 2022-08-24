@@ -5,10 +5,15 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.dh.kdh.bankmember.BankMembersDTO" alias="BankMembersDTO"/>
-		<typeAlias type="java.lang.String" alias="String"/>
 		<typeAlias type="com.dh.kdh.bankbook.BankBookDTO" alias="BankBookDTO"/>
 		<typeAlias type="com.dh.kdh.bankbook.BankBookDAO" alias="BankBookDAO"/>
 		<typeAlias type="com.dh.kdh.bankaccount.BankAccountDTO" alias="BankAccountDTO"/>
+		<typeAlias type="com.dh.kdh.board.impl.BoardDTO" alias="BoardDTO"/>
+		<typeAlias type="com.dh.kdh.board.notice.NoticeDTO" alias="NoticeDTO"/>
+		<typeAlias type="com.dh.kdh.board.qna.QnaDTO" alias="QnaDTO"/>
 		<typeAlias type="java.util.List" alias="List"/>
+		<typeAlias type="java.lang.String" alias="String"/>
+		
+		
 	</typeAliases>
 </configuration>

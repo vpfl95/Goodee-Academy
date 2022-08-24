@@ -14,17 +14,17 @@ import com.dh.kdh.bankmember.BankMembersDTO;
 
 public class BankAccountDAOTest extends MyAbstractTest {
 
-	@Autowired
-	private BankAccountDAO bankAccountDAO;
-	
-	@Test
-	public void getListTest()throws Exception {
-		BankMembersDTO bankMembersDTO = new BankMembersDTO();
-		bankMembersDTO.setUserName("id5");
- 		
-		List<BankAccountDTO> ar = bankAccountDAO.getListByUserName(bankMembersDTO);
-		
-		assertNotEquals(0, ar.size());
-	}
+//	@Autowired
+//	private BankAccountDAO bankAccountDAO;
+//	
+//	@Test
+//	public void getListTest()throws Exception {
+//		BankMembersDTO bankMembersDTO = new BankMembersDTO();
+//		bankMembersDTO.setUserName("id5");
+// 		
+//		List<BankAccountDTO> ar = bankAccountDAO.getListByUserName(bankMembersDTO);
+//		
+//		assertNotEquals(0, ar.size());
+//	}
 
 }

@@ -12,11 +12,11 @@
 <body class="text-center" data-new-gr-c-s-check-loaded="14.1073.0" data-gr-ext-installed="">
     <c:import url="../template/header.jsp"></c:import>
     <section class="container-fluid col-lg-8 mt-5">
-	    <main class="form-signin w-100 m-auto">
+	    <main class="form-signin w-50 m-auto">
 		  <form action="./login" method="post">
 		    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 		
-		    <div class="form-floating" style="">
+		    <div class="form-floating">
 		      <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="userName">
 		      <label for="floatingInput">ID</label>
 		    </div>
