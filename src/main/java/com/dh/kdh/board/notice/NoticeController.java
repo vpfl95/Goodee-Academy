@@ -8,10 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dh.kdh.board.impl.BoardDTO;
+import com.dh.kdh.util.Pager;
 
 @Controller
 @RequestMapping(value = "/notice/*")
@@ -26,14 +26,14 @@ public class NoticeController {
 	}
 	
 	@RequestMapping(value = "list", method = RequestMethod.GET)
-	public ModelAndView getList(@RequestParam(defaultValue = "1") Long page)throws Exception{
+	public ModelAndView getList(Pager pager)throws Exception{
 		ModelAndView mv = new ModelAndView();
-		
-		System.out.println(page);
-		
-		List<BoardDTO> arr = noticeService.getList(page);
+		System.out.println(pager.getPage());
+//		System.out.println(page);
+		List<BoardDTO> arr = noticeService.getList(pager);
 		mv.addObject("list",arr);
-//		model.addAttribute("board","Notice"); //@ModelAttribute로 대체함
+		mv.addObject("pager",pager);
+////		model.addAttribute("board","Notice"); //@ModelAttribute로 대체함
 		mv.setViewName("board/list");
 		return mv;
 	}

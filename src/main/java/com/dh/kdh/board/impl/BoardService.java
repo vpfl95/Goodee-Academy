@@ -2,13 +2,13 @@ package com.dh.kdh.board.impl;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
+import com.dh.kdh.util.Pager;
 
 
 public interface BoardService {
 	
 	
-	public List<BoardDTO> getList(Long page)throws Exception;
+	public List<BoardDTO> getList(Pager pager)throws Exception;
 
 	//글상세보기
 	public BoardDTO getDetail(BoardDTO boardDTO)throws Exception;

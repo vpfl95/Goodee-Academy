@@ -11,6 +11,7 @@
 		<typeAlias type="com.dh.kdh.board.impl.BoardDTO" alias="BoardDTO"/>
 		<typeAlias type="com.dh.kdh.board.notice.NoticeDTO" alias="NoticeDTO"/>
 		<typeAlias type="com.dh.kdh.board.qna.QnaDTO" alias="QnaDTO"/>
+		<typeAlias type="com.dh.kdh.util.Pager" alias="Pager"/>
 		<typeAlias type="java.util.List" alias="List"/>
 		<typeAlias type="java.lang.String" alias="String"/>
 		

@@ -1,9 +1,8 @@
 package com.dh.kdh.board.impl;
 
 import java.util.List;
-import java.util.Map;
 
-import org.springframework.stereotype.Repository;
+import com.dh.kdh.util.Pager;
 
 public interface BoardDAO {
 	
@@ -12,7 +11,7 @@ public interface BoardDAO {
 	
 	
 	//글목록
-	public List<BoardDTO> getList(Map<String, Long> map)throws Exception;
+	public List<BoardDTO> getList(Pager pager)throws Exception;
 	
 	//글상세보기
 	public BoardDTO getDetail(BoardDTO boardDTO)throws Exception;

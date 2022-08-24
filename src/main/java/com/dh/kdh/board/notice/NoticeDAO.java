@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.dh.kdh.board.impl.BoardDAO;
 import com.dh.kdh.board.impl.BoardDTO;
+import com.dh.kdh.util.Pager;
 
 @Repository
 public class NoticeDAO implements BoardDAO{
@@ -23,8 +24,8 @@ public class NoticeDAO implements BoardDAO{
 	}
 	
 	@Override
-	public List<BoardDTO> getList(Map<String, Long> map) throws Exception {
-		return sqlSession.selectList(NAMESAPCE+"getList",map);
+	public List<BoardDTO> getList(Pager pager) throws Exception {
+		return sqlSession.selectList(NAMESAPCE+"getList",pager);
 	}
 
 	@Override
