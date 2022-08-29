@@ -33,7 +33,7 @@
 	    </table>
 	    <button class="btn btn-sm btn-dark" onclick="location.href='./add'">글쓰기</button >
 	    
-		<nav aria-label="Page navigation example">
+		<nav aria-label="...">
 		  <ul class="pagination">
 		    <li class="page-item">
 		      <a class="page-link" href="./list?page=${pager.page-1}" aria-label="Previous">
@@ -42,7 +42,7 @@
 		    </li>
 		   
 		   <c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
-		   		<li class="page-item"><a class="page-link" href="./list?page=${i}">${i}</a></li>
+		   		<li class="page-item active" aria-current="page"><a class="page-link" href="./list?page=${i}">${i}</a></li>
 		   </c:forEach>
 		   
 		    <li class="page-item">
