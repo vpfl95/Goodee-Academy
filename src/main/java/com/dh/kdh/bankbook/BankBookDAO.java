@@ -29,19 +29,17 @@ public class BankBookDAO implements BookDAO{
 	}
 
 	@Override
-	public BankBookDTO getDetail(BankBookDTO bankBookDTO) throws Exception {
-		return sqlSession.selectOne(NAMESPACE+"getDetail", bankBookDTO);
+	public int setDelete(BankBookDTO bankBookDTO) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
 	}
-	
+
 	@Override
 	public int setUpdate(BankBookDTO bankBookDTO) throws Exception {
-		return sqlSession.update(NAMESPACE+"setUpdate", bankBookDTO);
+		// TODO Auto-generated method stub
+		return 0;
 	}
-	
-	@Override
-	public int setDelete(BankBookDTO bankBookDTO) throws Exception {
-		return sqlSession.delete(NAMESPACE+"setDelete", bankBookDTO);
-	}
+
 
 
 	@Override
@@ -50,5 +48,10 @@ public class BankBookDAO implements BookDAO{
 		return 0;
 	}
 
+	@Override
+	public BankBookDTO getDetail(BankBookDTO bankBookDTO) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
