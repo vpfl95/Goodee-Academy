@@ -44,7 +44,7 @@
 	<a href="./delete.iu?bookNum=${dto.bookNum}">삭제</a>\
 	
 	<c:if test="${not empty sessionScope.member}">
-		<a href="../bankAccount/add.iu?bookNum=${dto.bookNum}">가입하기</a>
+		<a href="../bankaccount/add?bookNum=${dto.bookNum}">가입하기</a>
 	</c:if>
 	
 </body>
